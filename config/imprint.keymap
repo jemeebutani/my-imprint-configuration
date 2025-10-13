@@ -13,7 +13,7 @@
         left_screen: left_screen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LEFT_CONTROL &kp LEFT>;
+            bindings = <&macro_tap>, <&kp LEFT_CONTROL &kp LEFT>;
 
             label = "LEFT_SCREEN";
         };
@@ -21,7 +21,7 @@
         right_screen: right_screen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LEFT_CONTROL &kp RIGHT>;
+            bindings = <&macro_tap>, <&kp LEFT_CONTROL &kp RIGHT>;
 
             label = "RIGHT_SCREEN";
         };
@@ -29,7 +29,7 @@
         all_screen: all_screen {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LEFT_CONTROL &kp UP_ARROW>;
+            bindings = <&macro_tap>, <&kp LEFT_CONTROL &kp UP_ARROW>;
 
             label = "ALL_SCREEN";
         };
@@ -37,7 +37,7 @@
         prev_cursor_location: last_cursor_location {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LEFT_COMMAND &kp LEFT_BRACKET>;
+            bindings = <&macro_tap>, <&kp LEFT_COMMAND &kp LEFT_BRACKET>;
 
             label = "LAST_CURSOR_LOCATION";
         };
@@ -45,7 +45,7 @@
         next_cursor_locatoin: next_cursor_locatoin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LEFT_COMMAND &kp RIGHT_BRACKET>;
+            bindings = <&macro_tap>, <&kp LEFT_COMMAND &kp RIGHT_BRACKET>;
 
             label = "NEXT_CURSOR_LOCATOIN";
         };
@@ -131,10 +131,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 5 (make it slower for scrolling),,,,
+        // multiply sensitivity by 1, divide by 5 (make it slower for scrolling),,,,,
         <&zip_xy_scaler 1 5>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };
